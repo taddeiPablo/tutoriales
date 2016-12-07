@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ejemplo</title>
+	<link rel="stylesheet" href="./public/index.css">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app.js" type="text/javascript" charset="utf-8"></script>-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="/public/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				$.ajax({
+  					url: "http://localhost:8001/datos",
+  					method: "POST",
+  					context: "json"
+				}).done(function(response) {
+					alert(response);
+				});	
+			});
+			/*$.ajax({
+  				url: "",
+  				context: document.body
+			}).done(function() {
+  				$( this ).addClass( "done" );
+			});*/
+		});
+	</script>
+</head>
+<body ng-controller="index">
+	<h1>BIENVENIDOS A LA PAGINA DE PRUEBA</h1>
+	<hr>
+	<h2>{{nombre}}</h2>
+	<h2>esta pagina esta realizada en el lenguaje GO</h2>
+	<a href="/login" "email me">LOGIN</a>
+	<button type="button" name="mostrar" id="btn1" value="mostrar">MOSTRAR</button>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="/public/app.js"></script>-->
+</body>
+</html>
